@@ -20,7 +20,7 @@ def test_success_session_creation(mocker: MockerFixture):
 
     # Patch helper function
     mocker.patch(
-        "src.server_endpoints.get_chat_assistant",
+        "src.backend.server_endpoints.get_chat_assistant",
         return_value=mock_assistant,
     )
 
@@ -52,7 +52,7 @@ def test_chat_message_success(mocker: MockerFixture):
 
     # Patch assistant getter
     mocker.patch(
-        "src.server_endpoints.get_chat_assistant",
+        "src.backend.server_endpoints.get_chat_assistant",
         return_value=mock_assistant,
     )
 
