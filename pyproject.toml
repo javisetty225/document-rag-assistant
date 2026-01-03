@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "chatbot"
 version = "0.1.0"
 description = "Conversational chatbot"
-#readme = "README.md"
+readme = "README.md"
 requires-python = ">=3.12.10"
 authors = [
   { name = "Nagaraju Javisetty", email = "nagajavisetty143@gmail.com" }

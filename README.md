@@ -1,4 +1,4 @@
-# Chatbot API for Document Query with RAGFlow
+# Chatbot for Document Query with RAGFlow
 
 This project provides a **FastAPI**-based chatbot API that allows users to interact with documents (e.g., `git_best_practises_workflows.pdf`) using **RAGFlow**. The system uses **BGE-M3 embeddings** to encode the document and a **Llama model** to answer user queries.  
 
