@@ -57,6 +57,15 @@ This project provides a **FastAPI**-based chatbot API that allows users to inter
 }
 ```
 
+## UI Demonstration
+
+### Step 1: Start Screen
+1. User sees the chatbot title and the **Start Chat Session** button.
+2. User asks a question, and the chatbot responds with an answer from the document.
+
+<img src="docs/demo_images/1.png" width="600"/>
+<img src="docs/demo_images/2.png" width="600"/>
+
 ## Configuration
 
 Set environment variables:

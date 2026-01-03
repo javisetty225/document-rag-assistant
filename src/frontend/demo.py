@@ -5,7 +5,6 @@ BACKEND_BASE_URL = "http://localhost:8000"
 SESSION_ENDPOINT = f"{BACKEND_BASE_URL}/session"
 CHAT_ENDPOINT = f"{BACKEND_BASE_URL}/answer"
 
-
 def assistant_message(text: str):
     return {"role": "assistant", "content": text}
 
@@ -28,7 +27,6 @@ def start_chat_session():
         gr.update(visible=False),
     )
 
-
 def send_message(message, session_id, chat_history):
     payload = {
         "session_id": session_id,
@@ -49,22 +47,20 @@ def send_message(message, session_id, chat_history):
 with gr.Blocks(title="Chatbot") as demo:
 
     session_state = gr.State(value=None)
-    start_screen = gr.Column(visible=True)
 
-    with start_screen:
-        gr.Markdown(
-            """
-            <div style="text-align:center">
-                <h1>🤖 Document Rag Assistant</h1>
-            </div>
-            """
-        )
-        start_button = gr.Button("Start Chat Session", size="lg")
+    gr.Markdown(
+        """
+        <div style="text-align:center">
+            <h1>🤖 Document Rag Assistant</h1>
+        </div>
+        """
+    )
+
+    start_button = gr.Button("Start Chat Session", size="lg", visible=True)
 
     chat_screen = gr.Column(visible=False)
-
     with chat_screen:
-        chatbot = gr.Chatbot(height=450)
+        chatbot = gr.Chatbot(height=800)
         user_input = gr.Textbox(
             placeholder="Type your message...",
             show_label=False,
@@ -77,7 +73,7 @@ with gr.Blocks(title="Chatbot") as demo:
             chatbot,
             chat_screen,
             user_input,
-            start_screen,
+            start_button,
         ],
     )
 
@@ -86,7 +82,6 @@ with gr.Blocks(title="Chatbot") as demo:
         inputs=[user_input, session_state, chatbot],
         outputs=[user_input, chatbot],
     )
-
 
 if __name__ == "__main__":
     demo.launch(server_port=7860)
