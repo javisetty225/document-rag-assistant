@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from src.main import create_app
+from src.backend.main import create_app
 from pytest_mock import MockerFixture
 
 

@@ -6,7 +6,7 @@ from uuid import uuid4
 from fastapi import FastAPI, HTTPException
 from ragflow_sdk import RAGFlow
 
-from src.server_schemas import (
+from src.backend.server_schemas import (
     ChatMessageRequest,
     ChatMessageResponse,
     SessionMessageResponse,
@@ -100,7 +100,7 @@ def register_chatbot_routes(app: FastAPI):
         """
         try:
             assistant = get_chat_assistant()
-            session = get_chat_session(assistant, request.session_id)
+            session = get_chat_session(assistant, request.session_id)[0]
 
             response = session._ask_chat(
                 question=request.user_query,

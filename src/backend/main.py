@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 
-from src.server_endpoints import register_chatbot_routes
+from src.backend.server_endpoints import register_chatbot_routes
 import uvicorn
 
 
