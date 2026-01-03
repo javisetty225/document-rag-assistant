@@ -48,7 +48,7 @@ def test_chat_message_success(mocker: MockerFixture):
 
     # Mock assistant
     mock_assistant = mocker.Mock()
-    mock_assistant.list_sessions.return_value = mock_session
+    mock_assistant.list_sessions.return_value = [mock_session]
 
     # Patch assistant getter
     mocker.patch(
