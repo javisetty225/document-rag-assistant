@@ -15,7 +15,7 @@ from src.backend.server_schemas import (
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-RAGFLOW_API_KEY = os.getenv("API_KEY", "ragflow-A-EBXidE3iswvFgie-5F-uPqKT4yH17aAd2ZUAdx3QE")
+RAGFLOW_API_KEY = os.getenv("API_KEY")
 RAGFLOW_BASE_URL = os.getenv("RAGFLOW_BASE_URL", "http://localhost:9380")
 RAGFLOW_CHAT_NAME = os.getenv("CHAT_NAME", "test")
 
